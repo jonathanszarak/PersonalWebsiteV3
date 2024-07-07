@@ -173,8 +173,8 @@ body::after {
 .social-navbar {
     width: 100%;
     background: none;
-    padding: 10px 0;
     display: flex;
+    padding: 10px 0;
     justify-content: center;
 }
 
@@ -183,12 +183,12 @@ body::after {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center items */
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Center items vertically */
 }
 
 .social-navbar ul li {
-    margin: 10px 0; /* Space between links */
+    margin: 10px 10px; /* Space between links */
 }
 
 .social-navbar ul li a {
@@ -205,20 +205,66 @@ body::after {
     border-style: solid;
     border-color: #ffffff;
     border-width: 0.5px;
-}
-
-.social-navbar ul li:hover {
-    transform: scale(1.1);
+    overflow: hidden; /* Ensure box-shadow doesn't overflow */
 }
 
 .social-navbar ul li a:hover {
     color: #121212;
     background-color: #4a90e2; /* Slightly darker blue color on hover */
+    box-shadow: 0 0 15px 5px rgba(74, 144, 226, 0.8); /* Blue outer glow */
 }
 
+.social-navbar ul li a::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -5px; /* Adjust to fit around the button */
+    left: -5px; /* Adjust to fit around the button */
+    right: -5px; /* Adjust to fit around the button */
+    bottom: -5px; /* Adjust to fit around the button */
+    border-radius: 15px; /* Ensure same radius */
+    background: linear-gradient(to right, rgba(74, 144, 226, 0.8), rgba(196, 174, 235, 0.8)); /* Gradient glow */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Fade animation */
+}
+
+.social-navbar ul li a:hover::before {
+    opacity: 1; /* Show the gradient glow on hover */
+}
+
+.social-navbar ul li a i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #ffffff; /* White color for icons */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Animation for hop effect */
 .social-navbar ul li a:hover i {
     color: #121212; /* Black color for icons when hovered */
+    animation: hop 0.4s ease-out; /* Define hop animation */
 }
+
+
+@keyframes hop {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px); /* Hop up */
+    }
+    50% {
+        transform: translateY(0); /* Back to original position */
+    }
+    75% {
+        transform: translateY(-3px); /* Slight hop up */
+    }
+    100% {
+        transform: translateY(0); /* Back to original position */
+    }
+}
+
+
+
 
 
 
@@ -248,7 +294,7 @@ body::after {
     overflow: hidden;
     position: relative;
     border-radius: 15px;
-    transition: border-width 0.3s ease; /* Border width transition */
+    transition: border-width 0.3s ease, box-shadow 0.3s ease; /* Border width and box-shadow transition */
     aspect-ratio: 1 / 1; /* Maintain aspect ratio for square */
     max-width: 300px; /* Limit maximum width */
     border: 1px solid #ffffff; /* White border */
@@ -258,8 +304,9 @@ body::after {
     background-color: rgba(43, 43, 43, 0.5); /* Semi-transparent background color on hover */
 }
 
-.project:hover .project {
+.project:hover {
     border-width: 0.75px; /* Adjusted border width on hover */
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3); /* White outer glow */
 }
 
 .project-content {
@@ -287,6 +334,7 @@ body::after {
     flex-wrap: wrap;
     margin-top: auto;
 }
+
 
 .tag {
     font-size: 0.8rem; /* Adjusted font size */
