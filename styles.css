@@ -1,0 +1,371 @@
+/* General Body Styling */
+body {
+    background-color: rgba(18, 18, 18); /* Dark background color with increased opacity */
+    color: #ffffff; /* Light text color for contrast */
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center; /* Center content horizontally */
+    position: relative; /* Added relative positioning */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Gradient background design */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #4a90e2, #8a3ab9); /* Blue to purple gradient */
+    z-index: -2; /* Behind the background */
+    opacity: 0.03; /* Adjusted opacity to make gradient barely visible */
+}
+
+/* Subtle grid design */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px; /* Larger grid size */
+    z-index: -1; /* Behind the content */
+    opacity: 0.2; /* Adjusted opacity for the grid */
+}
+
+/* Title styling */
+.title {
+    position: relative;
+    z-index: 1;
+    font-size: 3.5rem; /* Smaller size for title */
+    font-weight: bold;
+    margin: 40px 0 10px; /* More space at the top, less at the bottom */
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: #ffffff; /* White color */
+}
+
+/* Subtitle styling */
+.subtitle {
+    font-size: 1.5rem; /* Adjust size as needed */
+    margin-top: 10px; /* Space between title and subtitle */
+    margin-bottom: 30px; /* Increased space between subtitle and links */
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: #ffffff; /* White color */
+}
+
+/* Remove underline from 'imagine' */
+.subtitle u {
+    text-decoration: none;
+    color: #4a90e2; /* Slightly darker blue color */
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: none;
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it is above other elements */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center; /* Center the navbar items horizontally */
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display items in a row */
+    flex-direction: column; /* Stack links vertically by default */
+    align-items: center; /* Center links horizontally */
+}
+
+.navbar ul li {
+    margin-bottom: 10px; /* Space between each link */
+    position: relative; /* Ensure relative positioning */
+    padding-top: 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 16px; /* Reduced padding */
+    border-radius: 15px; /* Slightly smaller radius */
+    font-size: 0.9rem; /* Smaller font size */
+    font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Fade transition */
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 0.5px;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff; /* White background color */
+    opacity: 0; /* Initially transparent */
+    transition: opacity 0.5s ease; /* Fade animation */
+    z-index: -1;
+    border-radius: 15px; /* Same border-radius as the link */
+}
+
+.navbar ul li a:hover::before {
+    opacity: 1; /* Fade in on hover */
+}
+
+.navbar ul li a i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #ffffff; /* White color for icons */
+    transition: color 0.3s ease;
+}
+
+.navbar ul li:hover {
+    transform: scale(1.1);
+}
+
+.navbar ul li a:hover {
+    color: #121212;
+    background-color: #4a90e2; /* Slightly darker blue color on hover */
+}
+
+.navbar ul li a:hover i {
+    color: #121212; /* Black color for icons when hovered */
+}
+
+/* Responsive Adjustments */
+@media screen and (min-width: 768px) {
+    .navbar ul {
+        flex-direction: row; /* Change to horizontal layout for larger screens */
+        justify-content: space-around;
+        width: 50%; /* Adjust as needed */
+    }
+
+    .navbar ul li {
+        margin-bottom: 0; /* Remove vertical spacing */
+        margin: 0 10px; /* Space between links horizontally */
+    }
+}
+
+/* Social Navbar Styles */
+.social-navbar {
+    width: 100%;
+    background: none;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items */
+}
+
+.social-navbar ul li {
+    margin: 10px 0; /* Space between links */
+}
+
+.social-navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 16px; /* Reduced padding */
+    border-radius: 15px; /* Slightly smaller radius */
+    font-size: 0.9rem; /* Smaller font size */
+    font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Fade transition */
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 0.5px;
+}
+
+.social-navbar ul li:hover {
+    transform: scale(1.1);
+}
+
+.social-navbar ul li a:hover {
+    color: #121212;
+    background-color: #4a90e2; /* Slightly darker blue color on hover */
+}
+
+.social-navbar ul li a:hover i {
+    color: #121212; /* Black color for icons when hovered */
+}
+
+
+
+/* Projects Section */
+.projects {
+    margin: 40px auto; /* Center the section */
+    width: 50%; /* Adjust as needed */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for projects */
+    gap: 20px; /* Adjust the gap between project boxes */
+    justify-items: center; /* Center items horizontally */
+}
+
+
+.project {
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    transition: border-width 0.3s ease; /* Border width transition */
+    aspect-ratio: 1 / 1; /* Maintain aspect ratio for square */
+    max-width: 300px; /* Limit maximum width */
+    border: 1px solid #ffffff; /* White border */
+}
+
+.project:hover .project-content {
+    background-color: rgba(43, 43, 43, 0.5); /* Semi-transparent background color on hover */
+}
+
+.project:hover .project {
+    border-width: 0.75px; /* Adjusted border width on hover */
+}
+
+.project-content {
+    padding: 15px; /* Adjusted padding */
+    background-color: rgba(43, 43, 43, 0); /* Initially transparent background */
+    height: 100%;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.project-title {
+    font-size: 1.5rem; /* Adjusted font size */
+    margin-bottom: 10px; /* Adjusted margin */
+    color: #ffffff;
+}
+
+.project-description {
+    font-size: 0.9rem; /* Adjusted font size */
+    color: #dddddd;
+    margin-bottom: 15px; /* Adjusted margin */
+}
+
+.project-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.tag {
+    font-size: 0.8rem; /* Adjusted font size */
+    padding: 4px 8px; /* Adjusted padding */
+    margin: 3px;
+    border-radius: 10px;
+    color: #000000; /* Black text color */
+}
+
+.tag.html {
+    background-color: #ff4500; /* Orange-red for HTML */
+}
+
+.tag.python {
+    background-color: #4fe24a; /* Blue for Python */
+}
+
+.tag.css {
+    background-color: #9370db; /* Light purple for CSS */
+}
+
+.tag.js {
+    background-color: #ffd700; /* Yellow for JS */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for projects on medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(1, 1fr); /* One column for projects on smaller screens */
+    }
+}
+/* About Section */
+.about {
+    margin: 40px auto; /* Center the section */
+    width: 50%; /* Adjust as needed */
+    text-align: center;
+}
+
+.about-content {
+    background-color: rgba(43, 43, 43, 0); /* Transparent background */
+    padding: 20px; /* Adjusted padding */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    border-radius: 15px;
+}
+
+.about-subtitle {
+    font-size: 2rem; /* Adjusted font size */
+    margin-bottom: 10px; /* Adjusted margin */
+    color: #ffffff;
+}
+
+.about-description {
+    font-size: 1rem; /* Adjusted font size */
+    color: #dddddd;
+    margin-bottom: 15px; /* Adjusted margin */
+}
+
+.footer-link {
+    font-size: 1rem; /* Adjusted font size */
+    color: #dddddd;
+    margin-bottom: 15px; /* Adjusted margin */
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #4a90e2;
+}
+
+.project-logo {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular shape */
+    border-style: none;
+    margin: 0 auto 10px; /* Centered and space below */
+    display: block; /* Ensures proper alignment */
+}
