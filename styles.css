@@ -24,7 +24,7 @@ body::before {
     height: 100%;
     background-image: linear-gradient(to bottom right, #4a90e2, #8a3ab9); /* Blue to purple gradient */
     z-index: -2; /* Behind the background */
-    opacity: 0.03; /* Adjusted opacity to make gradient barely visible */
+    opacity: 0.075; /* Adjusted opacity to make gradient barely visible */
 }
 
 /* Subtle grid design */
@@ -35,8 +35,8 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+                      linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px);
     background-size: 40px 40px; /* Larger grid size */
     z-index: -1; /* Behind the content */
     opacity: 0.2; /* Adjusted opacity for the grid */
@@ -372,31 +372,6 @@ body::after {
         grid-template-columns: repeat(1, 1fr); /* One column for projects on smaller screens */
     }
 }
-/* About Section */
-.about {
-    margin: 40px auto; /* Center the section */
-    width: 50%; /* Adjust as needed */
-    text-align: center;
-}
-
-.about-content {
-    background-color: rgba(43, 43, 43, 0); /* Transparent background */
-    padding: 20px; /* Adjusted padding */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
-    border-radius: 15px;
-}
-
-.about-subtitle {
-    font-size: 2rem; /* Adjusted font size */
-    margin-bottom: 10px; /* Adjusted margin */
-    color: #ffffff;
-}
-
-.about-description {
-    font-size: 1rem; /* Adjusted font size */
-    color: #dddddd;
-    margin-bottom: 15px; /* Adjusted margin */
-}
 
 .footer-link {
     font-size: 1rem; /* Adjusted font size */
@@ -416,4 +391,61 @@ body::after {
     border-style: none;
     margin: 0 auto 10px; /* Centered and space below */
     display: block; /* Ensures proper alignment */
+}
+
+/* About Section */
+.about {
+    margin: 40px auto; /* Center the section */
+    width: 50%; /* Adjust as needed */
+    text-align: center;
+}
+
+.about-content {
+    background-color: rgba(43, 43, 43, 0); /* Transparent background */
+    padding: 20px; /* Adjusted padding */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    border-radius: 15px;
+}
+
+.about-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular shape */
+    margin-bottom: 15px; /* Space below image */
+    border-style: solid;
+    border-color: #ffffff;
+}
+
+.about-image:hover {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3); /* White outer glow */
+    transition: box-shadow 0.3s ease; /* Border width and box-shadow transition */
+}
+
+.about-title {
+    font-size: 2rem; /* Adjusted font size */
+    margin-bottom: 10px; /* Adjusted margin */
+    color: #ffffff;
+}
+
+.about-description {
+    font-size: 1rem; /* Adjusted font size */
+    color: #dddddd;
+    margin-bottom: 15px; /* Adjusted margin */
+}
+
+.about-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between links */
+}
+
+.about-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.about-link:hover {
+    color: #4a90e2; /* Change color on hover */
 }
