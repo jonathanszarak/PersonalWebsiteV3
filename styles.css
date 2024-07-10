@@ -67,8 +67,26 @@ body::after {
 /* Remove underline from 'imagine' */
 .subtitle u {
     text-decoration: none;
-    color: #4a90e2; /* Slightly darker blue color */
+    background: linear-gradient(to bottom right, #4a90e2, #8a3ab9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%; /* Make the background larger to allow for movement */
+    animation: gradient-animation 3s ease infinite; /* Apply the animation */
 }
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
 
 /* Navbar Styles */
 .navbar {
@@ -210,7 +228,7 @@ body::after {
 
 .social-navbar ul li a:hover {
     color: #121212;
-    background-color: #4a90e2; /* Slightly darker blue color on hover */
+    background-color: transparent; /* Transparent to show gradient background */
     box-shadow: 0 0 15px 5px rgba(74, 144, 226, 0.8); /* Blue outer glow */
 }
 
@@ -223,7 +241,7 @@ body::after {
     right: -5px; /* Adjust to fit around the button */
     bottom: -5px; /* Adjust to fit around the button */
     border-radius: 15px; /* Ensure same radius */
-    background: linear-gradient(to right, rgba(74, 144, 226, 0.8), rgba(196, 174, 235, 0.8)); /* Gradient glow */
+    background: linear-gradient(to right, rgba(74, 144, 226, 0.8), rgba(138, 58, 185, 0.8)); /* Gradient glow */
     opacity: 0;
     transition: opacity 0.3s ease; /* Fade animation */
 }
@@ -244,7 +262,6 @@ body::after {
     animation: hop 0.4s ease-out; /* Define hop animation */
 }
 
-
 @keyframes hop {
     0% {
         transform: translateY(0);
@@ -262,6 +279,19 @@ body::after {
         transform: translateY(0); /* Back to original position */
     }
 }
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
 
 
 
@@ -389,14 +419,33 @@ body::after {
 
 .footer-link {
     font-size: 1rem; /* Adjusted font size */
-    color: #dddddd;
+    color: #ffffff; /* Default color */
     margin-bottom: 15px; /* Adjusted margin */
     text-decoration: none;
+    -webkit-text-fill-color: #ffffff; /* Ensure text color is white */
 }
 
 .footer-link:hover {
-    color: #4a90e2;
+    background: linear-gradient(to bottom right, #4a90e2, #8a3ab9); /* Define your gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%; /* Make the background larger to allow for movement */
+    animation: gradient-animation 3s ease infinite; /* Apply the animation */
 }
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
 
 .project-logo {
     width: 50px; /* Adjust size as needed */
