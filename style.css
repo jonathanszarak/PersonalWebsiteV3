@@ -1,0 +1,419 @@
+/* General Body Styling */
+body {
+    background-color: rgba(18, 18, 18); /* Dark background color with increased opacity */
+    color: #ffffff; /* Light text color for contrast */
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center; /* Center content horizontally */
+    position: relative; /* Added relative positioning */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Gradient background design */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #4a90e2, #8a3ab9); /* Blue to purple gradient */
+    z-index: -2; /* Behind the background */
+    opacity: 0.1; /* Adjusted opacity to make gradient barely visible */
+}
+
+.title {
+    font-size: 5vh;
+    letter-spacing: 1vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.column {
+    background: none;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0.8px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+}
+
+.column h3 {
+    margin-top: 0;
+    font-size: 3vh;
+}
+
+.bn5 {
+    font-family: Arial, sans-serif;
+    font-style: bold;
+    font-size: 14px;
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: #000;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+  
+.bn5:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowingbn5 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+  
+@keyframes glowingbn5 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}
+  
+.bn5:active {
+    color: #fff;
+}
+  
+.bn5:active:after {
+    background: transparent;
+}
+  
+.bn5:hover:before {
+    opacity: 1;
+}
+  
+.bn5:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.popup-form {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content {
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0.8px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.draggable-item {
+    margin: 10px 0;
+    padding: 10px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0.8px;
+    border-radius: 10px;
+    background: none;
+    cursor: move;
+    position: relative;
+}
+
+.draggable-item .delete-btn,
+.draggable-item .arrow-btn {
+    position: absolute;
+    cursor: pointer;
+    font-size: 12px;
+    background-color: #f73434;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.draggable-item .delete-btn {
+    top: 5px;
+    right: 5px;
+}
+
+.draggable-item .arrow-btn {
+    bottom: 5px;
+    width: 20px;
+}
+
+.arrow-left {
+    left: 5px;
+}
+
+.arrow-right {
+    right: 5px;
+}
+
+/* Social Navbar Styles */
+.social-navbar {
+    width: 100%;
+    background: none;
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+}
+
+.social-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.social-navbar ul li {
+    margin: 10px 10px; /* Space between links */
+}
+
+.social-navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 16px; /* Reduced padding */
+    border-radius: 15px; /* Slightly smaller radius */
+    font-size: 0.9rem; /* Smaller font size */
+    font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Fade transition */
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    overflow: hidden; /* Ensure box-shadow doesn't overflow */
+}
+
+.social-navbar ul li a:hover {
+    color: #121212;
+    background-color: transparent; /* Transparent to show gradient background */
+    box-shadow: 0 0 15px 5px rgba(74, 144, 226, 0.8); /* Blue outer glow */
+}
+
+.social-navbar ul li a::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -5px; /* Adjust to fit around the button */
+    left: -5px; /* Adjust to fit around the button */
+    right: -5px; /* Adjust to fit around the button */
+    bottom: -5px; /* Adjust to fit around the button */
+    border-radius: 15px; /* Ensure same radius */
+    background: linear-gradient(to right, rgba(74, 144, 226, 0.8), rgba(138, 58, 185, 0.8)); /* Gradient glow */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Fade animation */
+}
+
+.social-navbar ul li a:hover::before {
+    opacity: 1; /* Show the gradient glow on hover */
+}
+
+.social-navbar ul li a i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #ffffff; /* White color for icons */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Animation for hop effect */
+.social-navbar ul li a:hover i {
+    color: #121212; /* Black color for icons when hovered */
+    animation: hop 0.4s ease-out; /* Define hop animation */
+}
+
+@keyframes hop {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px); /* Hop up */
+    }
+    50% {
+        transform: translateY(0); /* Back to original position */
+    }
+    75% {
+        transform: translateY(-3px); /* Slight hop up */
+    }
+    100% {
+        transform: translateY(0); /* Back to original position */
+    }
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.footer-link {
+    font-size: 1rem; /* Adjusted font size */
+    color: #ffffff; /* Default color */
+    margin-bottom: 15px; /* Adjusted margin */
+    text-decoration: none;
+    -webkit-text-fill-color: #ffffff; /* Ensure text color is white */
+}
+
+.footer-link:hover {
+    background: linear-gradient(to bottom right, #4a90e2, #8a3ab9); /* Define your gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%; /* Make the background larger to allow for movement */
+    animation: gradient-animation 3s ease infinite; /* Apply the animation */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.subtitle u {
+    text-decoration: none;
+    background: linear-gradient(to bottom right, #4a90e2, #8a3ab9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%; /* Make the background larger to allow for movement */
+    animation: gradient-animation 3s ease infinite; /* Apply the animation */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Container for plan items */
+.plan-container {
+    width: 80%;
+    max-width: 400px;
+    min-height: 600px;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd; /* Light border for the container */
+}
+
+/* Styling for plan items */
+.plan-item {
+    background: none;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0.8px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.plan-item .delete-btn,
+.plan-item .arrow-btn {
+    position: absolute;
+    cursor: pointer;
+    font-size: 12px;
+    background-color: #f73434;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.plan-item .delete-btn {
+    top: 5px;
+    right: 5px;
+}
+
+.plan-item .arrow-btn {
+    bottom: 5px;
+    width: 20px;
+}
+
+.arrow-left {
+    left: 5px;
+}
+
+.arrow-right {
+    right: 5px;
+}
