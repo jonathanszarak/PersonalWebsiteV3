@@ -527,12 +527,12 @@ body::after {
     }
 
     .project-title {
-        font-size: 1.2rem; /* Adjust font size */
+        font-size: 1rem; /* Adjust font size */
         text-align: center; /* Center text */
     }
 
     .project-description {
-        font-size: 1rem; /* Adjust font size */
+        font-size: 0.8rem; /* Adjust font size */
         text-align: center; /* Center text */
     }
 }
