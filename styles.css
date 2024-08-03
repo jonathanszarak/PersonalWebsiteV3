@@ -494,6 +494,7 @@ body::after {
     font-size: 1rem; /* Adjusted font size */
     color: #dddddd;
     margin-bottom: 15px; /* Adjusted margin */
+    align-self: center;
 }
 
 .about-links {
@@ -511,4 +512,27 @@ body::after {
 
 .about-link:hover {
     color: #4a90e2; /* Change color on hover */
+}
+
+/* Add this at the end of your styles.css */
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .social-navbar ul {
+        flex-direction: column; /* Stack links vertically */
+    }
+    
+    .social-navbar ul li {
+        margin-bottom: 10px; /* Add space between links */
+    }
+
+    .project-title {
+        font-size: 1.2rem; /* Adjust font size */
+        text-align: center; /* Center text */
+    }
+
+    .project-description {
+        font-size: 1rem; /* Adjust font size */
+        text-align: center; /* Center text */
+    }
 }
