@@ -14,7 +14,6 @@ body {
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-/* Gradient background design */
 body::before {
     content: "";
     position: fixed;
@@ -25,7 +24,22 @@ body::before {
     background-image: linear-gradient(to bottom right, #4a90e2, #8a3ab9); /* Blue to purple gradient */
     z-index: -2; /* Behind the background */
     opacity: 0.075; /* Adjusted opacity to make gradient barely visible */
+    background-size: 200% 200%; /* Make the background larger to allow for movement */
+    animation: gradient-animation 3s ease infinite; /* Apply the animation */
 }
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
 
 /* Subtle grid design */
 body::after {
