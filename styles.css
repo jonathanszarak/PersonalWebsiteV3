@@ -418,6 +418,10 @@ body::after {
     background-color: #ffd700; /* Yellow for JS */
 }
 
+.tag.cs {
+    background-color: #4a90e2;
+}
+
 /* Responsive Adjustments */
 @media screen and (max-width: 1200px) {
     .project-grid {
